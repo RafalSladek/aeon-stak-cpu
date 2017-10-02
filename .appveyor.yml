@@ -23,15 +23,11 @@ build_script:
 
 test_script:
   - cd c:\aeon-stak-cpu\build\bin\Release
-  - dir
   - copy ..\..\..\config.txt .
-  - cd c:\aeon-stak-cpu
-#  - aeon-stak-cpu.exe
-
-after_build:
-  - cd c:\aeon-stak-cpu
-  - cmd: 7z a aeon-stak-cpu.zip C:\aeon-stak-cpu\build\bin\Release\aeon-stak-cpu.exe C:\aeon-stak-cpu\config.txt C:/OpenSSL-Win32/*.dll
-
+  - echo "$(appveyor_build_version)" > build.txt
+  - tree /f
+  
 artifacts:
-  - path: aeon-stak-cpu.zip
-  - path: aeon-stak-cpu-source.zip
+  - path: build\bin\Release
+    name: aeon-stak-cpu
+#  - aeon-stak-cpu.exe
