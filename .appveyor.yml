@@ -13,7 +13,7 @@ install:
   - 7z x aeon-stak-dep.zip -o"c:\aeon-stak-dep" -y > nul
 
 cache:
-  - aeon-stak-dep
+  - c:\aeon-stak-dep
 
 build_script:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat"
